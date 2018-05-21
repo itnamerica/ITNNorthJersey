@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate']);
 myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
   console.log('inside of config block');
   var viewsPath = "views/";
-  if (location.hostname === "localhost"){
+  if (location.host === 'localhost:8080'){
     viewsPath = "app/views/";
   };
 
@@ -42,7 +42,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         templateUrl: viewsPath + 'faq.html'
       })
       .state('member-app', {
-        url: '/member-application',
+        url: '/member-app',
         templateUrl: viewsPath + 'member-app.html'
       })
       .state('member-programs', {
@@ -149,7 +149,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.assetsPath = "assets";
   $scope.viewsPath = "../views";
   
-  if (location.hostname === "localhost"){
+  if (location.host === 'localhost:8080'){
     console.log("localhost server, staging env");
     $scope.assetsPath = "app/assets";
     $scope.viewsPath = "../app/views";
@@ -230,7 +230,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   
   //use this function instead of ng-href as ng-href is not compatible with html5mode
   $scope.redirectToURL = function(url){
-    $window.location.href = url;    
+    $window.open(url, '_blank');    
   }
   
   $scope.scrollTo = function(id) {
@@ -352,10 +352,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       "<p><strong>Subject:</strong>: " + $scope.formData.subject + "</p>\n " +
       "<p><strong>Message Body:</strong>: " + $scope.formData.messageBody + "</p>\n "
     }).then(function(res){
-        $scope.loading = false;
+        // $scope.loading = false;
         $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
     }).catch(function(err){
-        $scope.loading = false;
+        // $scope.loading = false;
         $scope.serverMessage = 'There was an error submitting your form. Please contact us by phone instead.';
     });
   }
@@ -402,10 +402,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           text: $scope.formData,
           pdf: $scope.dataPDF
         }).then(function(res){
-            $scope.loading = false;
+            // $scope.loading = false;
             $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
         }).catch(function(err){
-          $scope.loading = false;
+          // $scope.loading = false;
           $scope.serverMessage = 'There was an error submitting your form. Please contact us, or consider submitting your form by paper instead.';
         });
       });
@@ -430,10 +430,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           text: $scope.formData,
           pdf: $scope.dataPDF
         }).then(function(res){
-            $scope.loading = false;
+            // $scope.loading = false;
             $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
         }).catch(function(err){
-          $scope.loading = false;
+          // $scope.loading = false;
           $scope.serverMessage = 'There was an error submitting your form. Please contact us, or consider submitting your form by paper instead.';
         });
       });
