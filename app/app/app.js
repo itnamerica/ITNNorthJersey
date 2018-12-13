@@ -452,7 +452,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       // $("#output").append($("<a/>").attr({href: $scope.pdfUrl}).append("Download"));
       // $scope.redirectToURL($scope.pdfUrl);
       console.log('redirecting to pdf', formType, formObj);
-      window.location.href = $scope.pdfUrl;
+      window.open($scope.pdfUrl);
     }
     else {
       return $scope.pdfUrl = "This form does not contain a PDF";
