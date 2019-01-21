@@ -13,11 +13,6 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img ng-src="{{assetsPath}}/images/mlk.png" alt="martin luther king banner" style="object-fit:contain">
-      <h2 class="carousel-statement">
-      </h2>
-    </div>
-    <div class="item">
       <img ng-src="{{assetsPath}}/images/dark/medium-res/highres-beach_small.jpeg" id="highres-beach" alt="beach">
       <h2 class="carousel-statement">
         Help seniors remain independent while saving for your own future transportation.
@@ -63,18 +58,7 @@
   </div><!--myCAROUSEL-->
 </div><!--hpCAROUSEL-->
 
-<div class="jumbotron section mlk-day" style="background:black;color:white">
-  <div class="container-fluid" style="width:80%">
-    <p>Dear Friends,</p>
-    <p>Martin Luther King Jr. Day is “A Day of Service”. More than six years ago we dreamed of providing a volunteer based transportation option to the residents of Bergen County. We, along with Ronne Bassman-Agins – our first volunteer driver, formed a Steering Committee with the sole objective of finding the start-up funding needed to open our doors.  We met with many people from many organizations who thought the service was necessary but since we weren’t yet operational they weren’t able to help us out. </p>
-    <p> In the spring of 2015 we met with both the Henry and Marilyn Taub Foundation and The Jewish Federation of Northern New Jersey.  They not only believed in the imperative need for our service but they decided to jointly provide us with the necessary funding to open our doors.  We could not be more grateful to them because without their support we would not be able to provide the rides we do week in and week out for the last 3 ½ years.</p>
-    <p>We are most grateful to our Volunteer Drivers, our founding donors, our newest donor: The Valley Hospital Foundation and so many others who help us serve our member riders.</p>
 
-    <p>Most Sincerely,</p>
-
-    <p>John, Kate and Mary</p>
-  </div>
-</div>
 
 <div class="jumbotron section hp-first">
   <h2 style="font-size:35px">Because life is about going places.</h2>
@@ -182,6 +166,43 @@
 
 </div><!--home-->
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width: 70%;">
+    <div class="modal-content" style="font-size:25px">
+      <div class="modal-header" style="background:#529ba8;color:white">
+        <h3 class="modal-title" id="exampleModalLabel">Happy Martin Luther King Day</h3>
+        <button type="button" style="margin-top: -30px" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background:black;">
+
+          <div class="container-fluid mlk-day" style="color:white">
+
+            <img ng-src="{{assetsPath}}/images/mlk.png" alt="martin luther king banner" style="height: 300px;margin-left: 35%;margin-bottom:50x">
+
+            <p>Dear Friends,</p>
+
+            <p>Martin Luther King Jr. Day is “A Day of Service”. More than six years ago we dreamed of providing a volunteer based transportation option to the residents of Bergen County. We, along with Ronne Bassman-Agins – our first volunteer driver, formed a Steering Committee with the sole objective of finding the start-up funding needed to open our doors.  We met with many people from many organizations who thought the service was necessary but since we weren’t yet operational they weren’t able to help us out. </p>
+            <p> In the spring of 2015 we met with both the Henry and Marilyn Taub Foundation and The Jewish Federation of Northern New Jersey.  They not only believed in the imperative need for our service but they decided to jointly provide us with the necessary funding to open our doors.  We could not be more grateful to them because without their support we would not be able to provide the rides we do week in and week out for the last 3 ½ years.</p>
+            <p>We are most grateful to our Volunteer Drivers, our founding donors, our newest donor: The Valley Hospital Foundation and so many others who help us serve our member riders.</p>
+
+            <p>Most Sincerely,</p>
+
+            <p>John, Kate and Mary</p>
+          </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div><!--end modal-->
+
 <script type="text/javascript">
   new WOW().init();
 
@@ -214,7 +235,7 @@
        }
     });
 
-
+    $('#myModal').modal('show');
 
   });
 </script>
